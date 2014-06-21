@@ -120,6 +120,13 @@ if($n == 'lists')
 		cot_redirect(cot_url('admin', 'm=cwsender&n=lists', '' ,true));
 	}
 	
+	if($a == 'delete' && !empty($id))
+    {
+        cwsender_delete_list($id);
+		
+        cot_redirect(cot_url('admin', 'm=cwsender&n=lists', '' ,true));
+    }
+	
 	$sql = $db->query("SELECT * FROM $db_cwsender_lists WHERE 1 ");
 	while($list = $sql->fetch())
 	{	

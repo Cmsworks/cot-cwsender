@@ -116,6 +116,23 @@ function cwsender_delete_letter($letterid)
 }
 
 
+/**
+ * Удаление списка рассылки
+ * @global type $sys
+ * @global type $db
+ * @global type $db_cwsender_lists
+ * @global type $db_cwsender_lists_recipients
+ * @param int $listid
+ */
+function cwsender_delete_list($listid)
+{
+    global $db, $db_cwsender_lists, $db_cwsender_lists_recipients;
+     
+    $db->delete($db_cwsender_lists, "list_id=" . $listid);
+    $db->delete($db_cwsender_lists_recipients, "rec_listid=" . $listid);
+}
+
+
 
 /**
  * Получение информации о рассылке $letterid
