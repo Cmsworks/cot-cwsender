@@ -93,7 +93,7 @@ if($n == 'lists')
 						$rcpnt = array_map('trim', $rcpnt);
 						if (!empty($rcpnt[0]) && !empty($rcpnt[1]))
 						{
-							$rrec['rec_lid'] = $lid;
+							$rrec['rec_listid'] = $lid;
 							$rrec['rec_name'] = $rcpnt[0];
 							$rrec['rec_email'] = $rcpnt[1];
 							
