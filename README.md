@@ -5,4 +5,4 @@
 
 Разработчик: Булат Юсупов support@cmsworks.ru
 
-Copyright CMSWorks Team 2013
+Copyright CMSWorks Team 2014
