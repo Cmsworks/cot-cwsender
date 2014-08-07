@@ -16,7 +16,7 @@
 		<td class="width30">{LIST_ROW_TITLE}</td>
 		<td class="width10">{LIST_ROW_TYPE}</td>
 		<td class="width45">{LIST_ROW_SETTING}</td>
-		<td class="width5"><a href="{LIST_ROW_DELETE_URL}"><i class="icon-remove"></i></a></td>
+		<td class="width5"><a href="{LIST_ROW_DELETE_URL}"><i class="icon-remove"></i> {PHP.L.Delete}</a></td>
 	</tr>
 	<!-- END: LIST_ROW -->
 </table>
@@ -122,7 +122,7 @@
 			<span class="label label-success">{PHP.L.cwsender_letters_status_sent}</span>
 			<!-- ENDIF -->
 		</td>
-		<td class="width5"><a href="{LETTER_ROW_DELETE_URL}"><i class="icon-remove"></i></a></td>
+		<td class="width5"><a href="{LETTER_ROW_DELETE_URL}"><i class="icon-remove"></i> {PHP.L.Delete}</a></td>
 	</tr>
 	<!-- END: LETTER_ROW -->
 </table>
