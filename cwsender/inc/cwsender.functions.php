@@ -5,7 +5,7 @@
  * @package Cwsender
  * @version 1.0.0
  * @author CMSWorks Team
- * @copyright Copyright (c) CMSWorks Team 2010-2013
+ * @copyright Copyright (c) CMSWorks Team 2010-2014
  * @license BSD
  */
 
@@ -267,4 +267,30 @@ function cwsender_getrecipients($letterid, $sent = 0)
 		$jj++;
 	}
 	return $recipients;
+}
+
+
+
+/**
+ * Вывод формы подписки
+ */
+function cwsender_subscribe($id)
+{
+	global $db, $db_cwsender_lists;
+	
+	if($subs = $db->query("SELECT * FROM $db_cwsender_lists WHERE list_id=".$id." AND list_type='subs'")->fetch())
+	{
+		$t = new XTemplate(cot_tplfile(array('cwsender', 'subscribe', $id), 'module'));
+		
+		$t->assign(array(
+			'SUBS_ID' => $id
+		));
+		
+		$t->parse('MAIN');
+		return $t->text('MAIN');
+	}
+	else
+	{
+		return false;
+	}
 }

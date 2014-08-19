@@ -115,6 +115,11 @@ if($n == 'lists')
 					$db->insert($db_cwsender_lists, $rlist);
 					$lid = $db->lastInsertId();
 				break;
+			
+				case 'subs':
+					$db->insert($db_cwsender_lists, $rlist);
+					$lid = $db->lastInsertId();
+				break;
 			}	
 		}
 		cot_redirect(cot_url('admin', 'm=cwsender&n=lists', '' ,true));

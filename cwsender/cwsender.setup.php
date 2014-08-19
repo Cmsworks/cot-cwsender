@@ -4,10 +4,10 @@
 Code=cwsender
 Name=Cwsender
 Description=Email-marketing manager
-Version=1.0.0
+Version=1.0.1
 Date=2013-08-08
 Author=CMSWorks Team
-Copyright=(c) CMSWorks Team 2010-2013
+Copyright=(c) CMSWorks Team 2010-2014
 Notes=BSD License
 Auth_guests=R
 Lock_guests=WA
