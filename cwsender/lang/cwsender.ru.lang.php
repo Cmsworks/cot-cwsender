@@ -39,7 +39,7 @@ $L['cwsender_error_letter_text_empty'] = 'Не указан текст расс�
 $L['cwsender_error_letter_list_notselect'] = 'Не выбран список рассылки';
 
 $L['cwsender_subscribe_title'] = 'Подписка на рассылку';
-$L['cwsender_subscribe_status_sent'] = 'Поздравляем! Вы подписались на рассылку.';
+$L['cwsender_subscribe_status_subs_ok'] = 'Поздравляем! Вы подписались на рассылку.';
 
 $L['cwsender_subscribe_error_email_empty'] = 'Не указан email для подписки';
 $L['cwsender_subscribe_error_email_wrong'] = 'Email указан неверно';

@@ -212,7 +212,7 @@ if($n == 'letters')
 						$groups = explode(',', $list['list_setting']);
 						$recipients = $db->query("SELECT user_name, user_email FROM $db_users AS u 
 							LEFT JOIN $db_groups_users as m ON m.gru_userid=u.user_id 
-							WHERE m.gru_groupid IN (".implode(',', $groups).")")->fetchAll();
+							WHERE m.gru_groupid IN (".implode(',', $groups).") AND u.user_sendmail=1")->fetchAll();
 						foreach ($recipients as $recipient)
 						{
 							$options['recipients'][] = array($recipient['user_name'], $recipient['user_email']);

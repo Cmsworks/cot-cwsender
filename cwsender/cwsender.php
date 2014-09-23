@@ -91,7 +91,7 @@ elseif($m == 'subscribe')
 			
 		if (!cot_error_found()){
 			$db->insert($db_cwsender_lists_recipients, $rrec);
-			$status = 'sent';
+			$status = 'subs_ok';
 		}
 		cot_redirect(cot_url('cwsender', 'm=subscribe&id='.$id.'&status='.$status, '', true));
 	}
