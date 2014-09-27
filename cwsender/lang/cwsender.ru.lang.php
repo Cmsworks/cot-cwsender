@@ -29,6 +29,7 @@ $L['cwsender_letters_status_sent'] = 'Рассылка завершена';
 $L['cwsender_letters_form_title'] = 'Заголовок';
 $L['cwsender_letters_form_text'] = 'Текст';
 $L['cwsender_letters_form_list'] = 'Список рассылки';
+$L['cwsender_letters_unsubs_text'] = ' <br/><br/><a href="{$unsubs_url}">Отписаться от рассылки</a><br/><br/>';
 
 $L['cwsender_error_type_text_empty'] = 'Не заполнен список получателей';
 $L['cwsender_error_type_groups_empty'] = 'Не выбраны группы получателей';
@@ -39,8 +40,14 @@ $L['cwsender_error_letter_text_empty'] = 'Не указан текст расс�
 $L['cwsender_error_letter_list_notselect'] = 'Не выбран список рассылки';
 
 $L['cwsender_subscribe_title'] = 'Подписка на рассылку';
+$L['cwsender_subscribe_name'] = 'Ваше имя';
+$L['cwsender_subscribe_email'] = 'Ваша почта';
 $L['cwsender_subscribe_status_subs_ok'] = 'Поздравляем! Вы подписались на рассылку.';
 
 $L['cwsender_subscribe_error_email_empty'] = 'Не указан email для подписки';
 $L['cwsender_subscribe_error_email_wrong'] = 'Email указан неверно';
 $L['cwsender_subscribe_error_email_exists'] = 'Указанный email уже имеется в списке подписчиков данной рассылки';
+
+$L['cwsender_unsubscribe_title'] = 'Отписка от рассылки';
+$L['cwsender_unsubscribe_status_unsubs_ok'] = 'Вы отписались от рассылки.';
+$L['cwsender_unsubscribe_status_unsubs_fail'] = 'Не удалось выполнить операцию. Пожалуйста, повторите ваш запрос или обратитесь к администратору сайта.';

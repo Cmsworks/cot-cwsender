@@ -143,7 +143,7 @@ function cwsender_delete_list($listid)
  */
 function cwsender_getletterinfobyid($letterid)
 {
-	global $db, $db_cwsender_letters;
+	global $db, $db_cwsender_letters, $db_cwsender_lists;
 	
 	if($letter = $db->query("SELECT * FROM $db_cwsender_letters WHERE letter_id=".$letterid)->fetch())
 	{
@@ -152,6 +152,8 @@ function cwsender_getletterinfobyid($letterid)
 			$optcode = explode('_', $i);
 			$options[$optcode[1]] = $option;
 		}
+		
+		$options['list'] = $db->query("SELECT * FROM $db_cwsender_lists WHERE list_id=".$letter['letter_listid'])->fetch();
 	}
 	
 	$options['recipients'] = cwsender_getrecipients($letterid);
