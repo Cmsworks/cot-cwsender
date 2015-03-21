@@ -53,7 +53,7 @@ if(empty($m)){
 				}
 				else
 				{
-					$unsubs_url = $cfg['mainurl'].'/'.cot_url('users', 'm=rofile', '', true);
+					$unsubs_url = $cfg['mainurl'].'/'.cot_url('users', 'm=profile', '', true);
 				}
 				
 				cot_mail($recipient['email'], $letter['title'], cot_rc($letter['text'].$L['cwsender_letters_unsubs_text'], array('username' => $recipient['name'], 'unsubs_url' => $unsubs_url)), '', false, null, $html);
