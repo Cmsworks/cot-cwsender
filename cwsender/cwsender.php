@@ -81,7 +81,7 @@ elseif($m == 'subscribe')
 {
 	$id = cot_import('id', 'G', 'INT');
 	$status = cot_import('status', 'G', 'ALP');
-	
+	cot_block($id);
 	$subs = $db->query("SELECT * FROM $db_cwsender_lists WHERE list_id=".$id." AND list_type='subs'")->fetch();
 	$out['subtitle'] = (!empty($subs['list_title'])) ? $subs['list_title'] : $L['cwsender_lists_form_type_subs_title'] ;
 	cot_block($subs);
