@@ -132,12 +132,13 @@ if($n == 'lists')
         cot_redirect(cot_url('admin', 'm=cwsender&n=lists', '' ,true));
     }
 	
-	$sql = $db->query("SELECT * FROM $db_cwsender_lists WHERE 1 ");
+	$sql = $db->query("SELECT l.*, COUNT(r.rec_id) AS count_recipients FROM $db_cwsender_lists AS l LEFT JOIN $db_cwsender_lists_recipients AS r ON l.list_id = r.rec_listid GROUP BY l.list_id");
 	while($list = $sql->fetch())
 	{	
+		$count_recipients = ($list['list_type'] == 'subs') ? ' ('. $list['count_recipients'].')' : '' ;
 		$t->assign(array(
 			'LIST_ROW_ID' => $list['list_id'],
-			'LIST_ROW_TITLE' => $list['list_title'],
+			'LIST_ROW_TITLE' => $list['list_title'].$count_recipients,
 			'LIST_ROW_TYPE' => $list['list_type'],
 			'LIST_ROW_SETTING' => $list['list_setting'],
 			'LIST_ROW_DELETE_URL' => cot_url('admin', 'm=cwsender&n=lists&a=delete&id=' . $list['list_id']),
