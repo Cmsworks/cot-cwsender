@@ -97,7 +97,7 @@ elseif($m == 'subscribe')
 		$emailexists = (bool)$db->query("SELECT rec_id FROM $db_cwsender_lists_recipients WHERE rec_email = ? LIMIT 1", array($rrec['rec_email']))->fetch();
 		
 		cot_check(empty($rrec['rec_email']), 'cwsender_subscribe_error_email_empty', 'remail');
-		cot_check(!cot_check_email($rrec['rec_email']), 'cwsender_subscribe_error_email_wrong', 'remail');
+		cot_check(!empty($rrec['rec_email']) && !cot_check_email($rrec['rec_email']), 'cwsender_subscribe_error_email_wrong', 'remail');
 		cot_check($emailexists, 'cwsender_subscribe_error_email_exists', 'remail');
 			
 		if (!cot_error_found()){
