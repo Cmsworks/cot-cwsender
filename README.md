@@ -3,6 +3,6 @@
 Страница разработки: http://cmsworks.ru/catalog/modules/cwsender
 
 
-Разработчик: Булат Юсупов support@cmsworks.ru
+Разработчик: CMSWorks Team support@cmsworks.ru
 
-Copyright CMSWorks Team 2014
+Copyright CMSWorks Team 2016
