@@ -5,4 +5,4 @@
 
 Разработчик: CMSWorks Team support@cmsworks.ru
 
-Copyright CMSWorks Team 2014
+Copyright CMSWorks Team 2016
