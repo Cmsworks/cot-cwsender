@@ -103,6 +103,11 @@
 <!-- BEGIN: LETTERS -->
 <h3>{PHP.L.cwsender_letters_title}</h3>
 <table class="cells">
+	<!-- IF {LETTERS_ORDER} -->
+		<tr>
+			<td colspan="5">{LETTERS_ORDER}</td>
+		</tr>
+	<!-- ENDIF -->
 	<!-- BEGIN: LETTER_ROW -->
 	<tr>
 		<td class="width10">{LETTER_ROW_DATE|cot_date('d.m.Y H:i', $this)}</td>

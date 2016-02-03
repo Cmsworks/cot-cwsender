@@ -167,6 +167,8 @@ if($n == 'lists')
 
 if($n == 'letters')
 {
+	$order = cot_import('order', 'G', 'TXT');
+
 	if($a == 'add')
 	{
 		$rletter['title'] = cot_import('rtitle', 'P', 'TXT');
@@ -257,9 +259,24 @@ if($n == 'letters')
 		cot_redirect(cot_url('admin', 'm=cwsender&n=letters', '' ,true));
 	}
 
+	switch ($order) {
+		case 'asc':
+			$ordersql = " ORDER BY letter_date ASC";
+			$order = 'desc';
+			break;
+		case 'desc':
+			$ordersql = " ORDER BY letter_date DESC";
+			$order = 'asc';
+			break;
+		default:
+			$ordersql = " ORDER BY letter_date ASC";
+			$order = 'desc';
+			break;
+	}
+
 	$sql = $db->query("SELECT * FROM $db_cwsender_letters AS letters 
 		LEFT JOIN $db_cwsender_lists AS lists ON lists.list_id=letters.letter_listid 
-		WHERE 1 ");
+		WHERE 1 ".$ordersql);
 	while($letter = $sql->fetch())
 	{	
 		$t->assign(array(
@@ -291,6 +308,9 @@ if($n == 'letters')
 	));
 
 	$t->parse('MAIN.LETTERS.ADDFORM');
+	$t->assign(array(
+		'LETTERS_ORDER' => cot_rc_link(cot_url('admin', 'm=cwsender&n=letters&order='.$order),($order == 'asc') ? $L['Ascending'] : $L['Descending'],"class='btn btn-default'"),
+	));
 	$t->parse('MAIN.LETTERS');
 }
 
