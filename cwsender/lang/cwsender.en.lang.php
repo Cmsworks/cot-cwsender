@@ -30,6 +30,7 @@ $L['cwsender_letters_form_title'] = 'Заголовок';
 $L['cwsender_letters_form_text'] = 'Текст';
 $L['cwsender_letters_form_list'] = 'Список рассылки';
 $L['cwsender_letters_unsubs_text'] = ' <br/><br/><a href="{$unsubs_url}">Отписаться от рассылки</a><br/><br/>';
+$L['cwsender_subsuser_title'] = 'Список подписчиков';
 
 $L['cwsender_error_type_text_empty'] = 'Не заполнен список получателей';
 $L['cwsender_error_type_groups_empty'] = 'Не выбраны группы получателей';

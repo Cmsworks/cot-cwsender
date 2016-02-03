@@ -135,7 +135,7 @@ if($n == 'lists')
 	$sql = $db->query("SELECT l.*, COUNT(r.rec_id) AS count_recipients FROM $db_cwsender_lists AS l LEFT JOIN $db_cwsender_lists_recipients AS r ON l.list_id = r.rec_listid GROUP BY l.list_id");
 	while($list = $sql->fetch())
 	{	
-		$count_recipients = ($list['list_type'] == 'subs') ? ' ('. $list['count_recipients'].')' : '' ;
+		$count_recipients = ($list['list_type'] == 'subs') ? ' ('. cot_rc_link(cot_url('admin', 'm=cwsender&n=subsusers&subsid='.$list['list_id']), $list['count_recipients']).')' : '' ;
 		$t->assign(array(
 			'LIST_ROW_ID' => $list['list_id'],
 			'LIST_ROW_TITLE' => $list['list_title'].$count_recipients,
@@ -163,6 +163,25 @@ if($n == 'lists')
 	$t->parse('MAIN.LISTS');
 	
 	
+}
+
+if($n == 'subsusers'){
+
+	$subsid = cot_import('subsid', 'G', 'INT');
+
+	$sql = $db->query("SELECT * FROM $db_cwsender_lists_recipients WHERE rec_listid={$subsid}")->fetchAll();
+	foreach ($sql as $user) {
+		$t->assign(array(
+			'USERS_ROW_ID' => $user['rec_id'],
+			'USERS_ROW_NAME' => $user['rec_name'],
+			'USERS_ROW_EMAIL' => $user['rec_email']
+		));
+		$t->parse('MAIN.SUBSUSERS.USERS_ROW');
+	}
+	$t->assign(array(
+		'SUBSUSERS_TITLE' => $db->query("SELECT list_title FROM {$db_cwsender_lists} WHERE list_id={$subsid}")->fetchColumn(),
+	));
+	$t->parse('MAIN.SUBSUSERS');
 }
 
 if($n == 'letters')

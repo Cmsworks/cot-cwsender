@@ -166,6 +166,20 @@
 
 <!-- END: LETTERS -->
 
+<!-- BEGIN: SUBSUSERS -->
+<h3>{PHP.L.cwsender_subsuser_title} ({SUBSUSERS_TITLE})</h3>
+<table class="cells">
+	<!-- BEGIN: USERS_ROW -->
+	<tr>
+		<td class="width10">{USERS_ROW_ID}</td>
+		<td>{USERS_ROW_NAME}</td>
+		<td>{USERS_ROW_EMAIL}</td>
+	</tr>
+	<!-- END: USERS_ROW -->
+</table>
+
+<!-- END: SUBSUSERS -->
+
 </div>
 				
 <!-- END: MAIN -->
